@@ -1,0 +1,17 @@
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: Inter, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+
+body {
+  margin: 0;
+}
+
+a,
+button {
+  font: inherit;
+}

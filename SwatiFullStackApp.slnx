@@ -1,2 +1,8 @@
 <Solution>
+  <Folder Name="/src/">
+    <Project Path="src/SwatiFullStackApp.Api/SwatiFullStackApp.Api.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/SwatiFullStackApp.Api.Tests/SwatiFullStackApp.Api.Tests.csproj" />
+  </Folder>
 </Solution>

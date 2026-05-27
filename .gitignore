@@ -1,0 +1,6 @@
+**/bin/
+**/obj/
+**/TestResults/
+src/swati-fullstack-app-ui/node_modules/
+src/swati-fullstack-app-ui/.angular/
+playwright-report/

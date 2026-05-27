@@ -1,0 +1,66 @@
+@if (viewModel$ | async; as vm) {
+  @if (vm.catalog; as catalog) {
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Practical learning app</p>
+        <h1>{{ catalog.title }}</h1>
+        <p class="subtitle">{{ catalog.subtitle }}</p>
+      </div>
+      <div class="hero-panel">
+        <h2>Suggested portfolio builds</h2>
+        <ul>
+          @for (project of catalog.suggestedProjects; track project) {
+            <li>{{ project }}</li>
+          }
+        </ul>
+      </div>
+    </section>
+
+    <section class="stats">
+      <article>
+        <strong>{{ catalog.sections.length }}</strong>
+        <span>Sections</span>
+      </article>
+      <article>
+        <strong>{{ catalog.sections.reduce((count, section) => count + section.concepts.length, 0) }}</strong>
+        <span>Concept cards</span>
+      </article>
+      <article>
+        <strong>Hands-on</strong>
+        <span>Every card includes practical guidance</span>
+      </article>
+    </section>
+
+    <section class="section-grid">
+      @for (section of catalog.sections; track section.id) {
+        <article class="section-card">
+          <div class="section-header">
+            <h2>{{ section.title }}</h2>
+            <p>{{ section.summary }}</p>
+          </div>
+
+          <div class="concept-grid">
+            @for (concept of section.concepts; track concept.title) {
+              <article class="concept-card">
+                <h3>{{ concept.title }}</h3>
+                <p><strong>Easy view:</strong> {{ concept.simpleExplanation }}</p>
+                <p><strong>Practical use:</strong> {{ concept.practicalExample }}</p>
+                <p><strong>Senior focus:</strong> {{ concept.seniorFocus }}</p>
+                <ul class="tag-list">
+                  @for (skill of concept.keySkills; track skill) {
+                    <li>{{ skill }}</li>
+                  }
+                </ul>
+              </article>
+            }
+          </div>
+        </article>
+      }
+    </section>
+  } @else if (vm.error) {
+    <section class="error-state">
+      <h1>Catalog unavailable</h1>
+      <p>{{ vm.error }}</p>
+    </section>
+  }
+}
