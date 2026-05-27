@@ -7,13 +7,14 @@
     </div>
 
     <nav aria-label="Primary navigation">
-      <a
-        *ngFor="let item of navigationItems"
-        [routerLink]="item.path"
-        routerLinkActive="active"
-        [routerLinkActiveOptions]="{ exact: item.path === '/' }">
-        {{ item.label }}
-      </a>
+      @for (item of navigationItems; track item.path) {
+        <a
+          [routerLink]="item.path"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: item.path === '/' }">
+          {{ item.label }}
+        </a>
+      }
     </nav>
   </header>
 

@@ -1,4 +1,4 @@
-import { AsyncPipe, NgClass } from '@angular/common';
+import { AsyncPipe } from '@angular/common';
 import { Component, inject } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable, of } from 'rxjs';
@@ -16,7 +16,7 @@ interface CatalogViewModel {
 
 @Component({
   selector: 'app-catalog-page',
-  imports: [AsyncPipe, NgClass],
+  imports: [AsyncPipe],
   templateUrl: './catalog-page.component.html',
   styleUrl: './catalog-page.component.css'
 })
@@ -25,6 +25,11 @@ export class CatalogPageComponent {
   private readonly catalogApi = inject(CatalogApiService);
 
   protected readonly viewModel$: Observable<CatalogViewModel> = this.loadCatalog();
+
+
+  protected getConceptCount(catalog: CatalogResponse): number {
+    return catalog.sections.reduce((count, section) => count + section.concepts.length, 0);
+  }
 
   private loadCatalog(): Observable<CatalogViewModel> {
     const catalogType = (this.route.snapshot.data['catalogType'] as CatalogKind | undefined) ?? 'learning';

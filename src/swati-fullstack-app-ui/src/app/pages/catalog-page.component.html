@@ -22,7 +22,7 @@
         <span>Sections</span>
       </article>
       <article>
-        <strong>{{ catalog.sections.reduce((count, section) => count + section.concepts.length, 0) }}</strong>
+        <strong>{{ getConceptCount(catalog) }}</strong>
         <span>Concept cards</span>
       </article>
       <article>
