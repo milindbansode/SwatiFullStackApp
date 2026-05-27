@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "Tr/mNfh2hcg=",
+  "success": true,
+  "projectFilePath": "/tmp/workspace/milindbansode/SwatiFullStackApp/src/SwatiFullStackApp.Api/SwatiFullStackApp.Api.csproj",
+  "expectedPackageFiles": [
+    "/home/runner/.nuget/packages/microsoft.aspnetcore.openapi/10.0.8/microsoft.aspnetcore.openapi.10.0.8.nupkg.sha512",
+    "/home/runner/.nuget/packages/microsoft.openapi/2.0.0/microsoft.openapi.2.0.0.nupkg.sha512"
+  ],
+  "logs": []
+}
